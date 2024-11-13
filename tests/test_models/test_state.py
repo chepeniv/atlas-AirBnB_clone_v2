@@ -3,6 +3,7 @@
 import unittest, os
 from models.state import State
 
+
 class TestStateFile(unittest.TestCase):
 
     def setUp(self):
@@ -23,6 +24,7 @@ class TestStateFile(unittest.TestCase):
     def test_state_cities(self):
         self.assertIn(self.state.cities)
 
+
 class TestStateDB(unittest.TestCase):
 
     def test_state__init__success(self):
@@ -36,6 +38,7 @@ class TestStateDB(unittest.TestCase):
 
     def test_state_cities(self):
         pass
+
 
 if __name__ == "__main__":
     unittest.main()
