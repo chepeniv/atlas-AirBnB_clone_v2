@@ -6,11 +6,13 @@ our web service
 
 
 import os
-from datetime import datetime
+# from datetime import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.engine import valid_models
 
+classes = {"Amenity": Amenity, "City": City,
+           "Place": Place, "Review": Review, "State": State, "User": User}
 
 def metadata_create_all(engine):
     '''
@@ -131,7 +133,7 @@ class DBStorage:
             key = self.construct_key(entry)
             dictionary.update({key: entry})
         return dictionary
-    
+
     def get(self, cls, id):
         """
         Returns the object based on the class and its ID,
@@ -157,4 +159,3 @@ class DBStorage:
                 if type(obj).__name__ == cls.__name__:
                     count += 1
             return count
-
