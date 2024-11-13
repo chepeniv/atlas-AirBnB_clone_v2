@@ -7,6 +7,11 @@ our web service
 import json
 from datetime import datetime
 
+import models
+
+classes = {"Amenity": Amenity, "City": City,
+           "Place": Place, "Review": Review, "State": State, "User": User}
+
 
 class FileStorage:
     __file_path = "file.json"
@@ -131,4 +136,4 @@ class FileStorage:
         return count
 
 
-models = Storage()
+storage = FileStorage()
