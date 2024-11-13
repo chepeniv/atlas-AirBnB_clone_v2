@@ -12,8 +12,13 @@ import models
 classes = {"Amenity": Amenity, "City": City,
            "Place": Place, "Review": Review, "State": State, "User": User}
 
-
 class FileStorage:
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
+
     __file_path = "file.json"
     __objects = {}
 
@@ -134,6 +139,3 @@ class FileStorage:
             count = len(models.storage.all(cls).values())
 
         return count
-
-
-storage = FileStorage()
